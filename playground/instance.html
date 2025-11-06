@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <app-Header></app-Header>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({ // Vue 인스턴스 생성
+            el: '#app', //<div id="app"> 영역을 관리해라
+            data: {
+                message: 'hi' // 관리할 데이터를 준다 =.
+            },
+            methods: {
+                // 여기에 메서드를 정의할 수 있다.
+            },
+        });
+        // 너는 message라는 데이터를 관리하고 그 초기값은 hi 이다. 
+    </script>
+</body>
+</html>
