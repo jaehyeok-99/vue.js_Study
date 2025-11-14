@@ -7,8 +7,19 @@
 </head>
 <body>
     <div id="app">
-        <p>{{ num }}</p>
+        <p v-bind:id="uuid" v-bind:class='name'>{{ num }}</p>
+        <!-- <p id="abc1234">{{ num }}</p> -->
         <p>{{doubleNum}}</p>
+        <div v-if="loading">
+            Loading...
+        </div>
+        <div v-else="">
+            Use user has been logged in 
+        </div>
+        <div v-show="loading">
+            Loading
+        </div>
+        <input type='text' v-model= "message" >
   </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -16,7 +27,11 @@
         new Vue({
             el: '#app',
             data: {
-                num: 20, 
+                num: 10,
+                uuid: 'abc1234', 
+                name: 'text-blue',
+                loading: true,
+                message: '' 
             },
             computed: {
                 doubleNum: function() {
