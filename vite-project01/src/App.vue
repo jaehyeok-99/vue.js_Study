@@ -1,18 +1,30 @@
 <template>
   <div>
-    <app-header v-bind=propsdata="str"></app-header>
+    <app-header
+      v-bind:propsdata='str' 
+      v-on:renew="renewStr"></app-header>
   </div>
 </template>
 
-<script setup>
-// 1. 우리가 만든 '헤더' 부품을 불러옵니다(import).
+<script>
 import AppHeader from './components/AppHeader.vue'
+
+export default{
+  data: function(){
+    return{
+      str: '로봇 관제'
+    }
+  },
+  components:{
+    'app-header': AppHeader
+  },
+  methods: {
+    renewStr: function() {
+      this.str = 'Vue'
+    }
+  }
+}
 </script>
 
 <style scoped>
-main {
-  padding: 20px;
-  font-size: 1.2rem;
-  text-align: center;
-}
 </style>

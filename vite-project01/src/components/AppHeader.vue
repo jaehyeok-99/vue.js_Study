@@ -1,12 +1,18 @@
 <template>
 <header>
-    <h1>로봇 관제</h1>
+    <h1>{{ propsdata }}</h1>
+    <button v-on:click="sendEvent">버튼</button>
 </header>  
 </template>
 
 <script>
 export default {
-    props: ['propsdata']
+    props: ['propsdata'],
+    methods: {
+        sendEvent: function() {
+            this.$emit('renew');
+        }
+    }
 }
 </script>
 
